@@ -1,4 +1,4 @@
-package fr.naitflo.pokedex.architecture
+package fr.naitflo.pokedex
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
