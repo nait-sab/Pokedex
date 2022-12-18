@@ -1,3 +1,22 @@
 <resources>
     <string name="app_name">Pokedex</string>
+
+    <string name="bio_connexion">Me connecter</string>
+    <string name="bio_inscription">Créer mon compte</string>
+    <string name="champ_mail">Mail d\'utilisateur</string>
+    <string name="champ_password">Mot de passe</string>
+    <string name="bouton_aller_connexion"><![CDATA[< Me connecter]]></string>
+    <string name="bouton_aller_inscription"><![CDATA[Créer mon compte >]]></string>
+    <string name="bouton_connexion">Connexion</string>
+    <string name="bouton_inscription">Inscription</string>
+
+    <string name="pokemon_liste_add">Bouton Ajouter</string>
+    <string name="pokemon_liste_delete">Bouton Supprimer</string>
+    <string name="pokemon_liste_logoff">Bouton Logoff</string>
+
+    <string name="pokemon_item_sprite_desc">Sprite</string>
+    <string name="pokemon_item_nom_exemple">Pikachu</string>
+    <string name="pokemon_item_numero_exemple">#12</string>
+    <string name="pokemon_item_energy_desc">Foudre</string>
+
 </resources>

@@ -44,6 +44,8 @@ dependencies {
 
     // AndroidX
     implementation "androidx.room:room-runtime:2.4.3"
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.4.1'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.4.1'
     kapt "androidx.room:room-compiler:2.4.3"
     implementation "androidx.room:room-ktx:2.4.3"
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1"
@@ -52,6 +54,7 @@ dependencies {
     implementation 'com.google.android.material:material:1.7.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     implementation "androidx.recyclerview:recyclerview:1.2.1"
+    implementation 'androidx.core:core-splashscreen:1.0.0'
 
     // Google dependencies
     implementation 'com.google.android.material:material:1.7.0'
@@ -64,10 +67,7 @@ dependencies {
 
     // Firebase
     implementation platform('com.google.firebase:firebase-bom:31.1.1')
-    implementation 'com.google.firebase:firebase-database-ktx'
-    implementation 'com.google.firebase:firebase-firestore-ktx'
-    implementation 'com.google.firebase:firebase-messaging-ktx'
-    implementation 'com.google.firebase:firebase-config-ktx'
+    implementation 'com.google.firebase:firebase-auth:21.1.0'
 
     // Test dependencies
     testImplementation 'junit:junit:4.13.2'
