@@ -11,6 +11,6 @@ object RetrofitBuilder {
         .addConverterFactory(GsonConverterFactory.create(GsonBuilder().create()))
         .build()
 
-    fun pokemonQuote(): PokemonEndpoint =
+    fun pokemon(): PokemonEndpoint =
         retrofit.create(PokemonEndpoint::class.java)
 }
