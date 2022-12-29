@@ -1,10 +1,15 @@
 package fr.naitflo.pokedex.pokemon.view.activity
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.AttributeSet
+import android.view.View
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.auth.FirebaseAuth
 import fr.naitflo.pokedex.databinding.ActivityPokemonListeBinding
 import fr.naitflo.pokedex.firebase.LoginActivity
@@ -21,9 +26,9 @@ class PokemonListeActivity : AppCompatActivity() {
     private lateinit var viewModel: PokemonViewModel
     private lateinit var binding: ActivityPokemonListeBinding
     private lateinit var firebaseAuth: FirebaseAuth
+    private lateinit var adapter: PokemonAdapter
 
-    private val adapter: PokemonAdapter = PokemonAdapter()
-    private val pokemonListObserver = Observer<List<PokemonPojoUI>> {
+    private var pokemonListObserver = Observer<List<PokemonPojoUI>> {
         adapter.submitList(it)
     }
 
@@ -33,7 +38,9 @@ class PokemonListeActivity : AppCompatActivity() {
         firebaseAuth = FirebaseAuth.getInstance()
         setContentView(binding.root)
         viewModel = ViewModelProvider(this)[PokemonViewModel::class.java]
-//        binding.pokemonListeContenu.layoutManager = LinearLayoutManager(this,RecyclerView.VERTICAL,false)
+        adapter = PokemonAdapter();
+        binding.pokemonListeContenu.layoutManager = LinearLayoutManager(this,
+            RecyclerView.VERTICAL,false)
         binding.pokemonListeContenu.adapter = adapter
         initBinding()
     }
