@@ -11,8 +11,8 @@
     
     <ImageView
         android:id="@+id/pokemon_item_sprite"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:background="@drawable/fond_bouton_circulaire"
         android:src="@drawable/ic_pokeball"
         android:layout_gravity="center_vertical"
@@ -31,7 +31,7 @@
             android:layout_height="wrap_content"
             android:text="@string/pokemon_item_nom_exemple"
             android:textSize="16sp"
-            android:textColor="@color/black"
+            android:textColor="@color/texteItemPokemon"
             android:textStyle="bold"/>
 
         <TextView
@@ -40,9 +40,17 @@
             android:layout_height="wrap_content"
             android:text="@string/pokemon_item_numero_exemple"
             android:textSize="14sp"
-            android:textColor="@color/black"/>
+            android:textColor="@color/texteItemPokemon"/>
 
     </LinearLayout>
+
+    <ImageView
+        android:id="@+id/pokemon_item_energy2"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/ic_pokeball"
+        android:layout_gravity="center_vertical"
+        android:contentDescription="@string/pokemon_item_energy_desc" />
 
     <ImageView
         android:id="@+id/pokemon_item_energy"
@@ -51,5 +59,6 @@
         android:src="@drawable/ic_pokeball"
         android:layout_gravity="center_vertical"
         android:contentDescription="@string/pokemon_item_energy_desc" />
+
 
 </LinearLayout>

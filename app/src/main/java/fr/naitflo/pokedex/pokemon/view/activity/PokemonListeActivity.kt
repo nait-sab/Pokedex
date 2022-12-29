@@ -1,10 +1,9 @@
 package fr.naitflo.pokedex.pokemon.view.activity
 
-import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.AttributeSet
+import android.view.HapticFeedbackConstants
 import android.view.View
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -38,9 +37,13 @@ class PokemonListeActivity : AppCompatActivity() {
         firebaseAuth = FirebaseAuth.getInstance()
         setContentView(binding.root)
         viewModel = ViewModelProvider(this)[PokemonViewModel::class.java]
-        adapter = PokemonAdapter();
-        binding.pokemonListeContenu.layoutManager = LinearLayoutManager(this,
-            RecyclerView.VERTICAL,false)
+        adapter = PokemonAdapter() { item, view ->
+            onItemClick(item, view)
+        }
+        binding.pokemonListeContenu.layoutManager = LinearLayoutManager(
+            this,
+            RecyclerView.VERTICAL, false
+        )
         binding.pokemonListeContenu.adapter = adapter
         initBinding()
     }
@@ -80,5 +83,10 @@ class PokemonListeActivity : AppCompatActivity() {
 
     private fun ajouterPokemon() {
         viewModel.fetchNewPokemon()
+    }
+
+    private fun onItemClick(pokemonPojoUI: PokemonPojoUI, view: View) {
+        view.performHapticFeedback(HapticFeedbackConstants.VIRTUAL_KEY)
+        startActivity(Intent(this, PokemonInfoActivity::class.java))
     }
 }

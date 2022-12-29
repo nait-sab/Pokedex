@@ -5,13 +5,14 @@ import fr.naitflo.pokedex.pokemon.data.model.PokemonRoom
 import fr.naitflo.pokedex.pokemon.domain.model.PokemonPojoDomain
 
 fun PokemonRetrofit.toRoom(): PokemonRoom {
+
     return PokemonRoom(
         nom = nom,
         pokedexId = pokedexId,
         image = image,
         sprite = sprite,
         type1 = typedata[0].image,
-        type2 = typedata[1].image
+        type2 = if (typedata.size >1) typedata[1].image else null
     )
 }
 

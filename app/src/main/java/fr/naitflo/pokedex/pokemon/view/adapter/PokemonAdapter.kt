@@ -1,6 +1,7 @@
 package fr.naitflo.pokedex.pokemon.view.adapter
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
@@ -8,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import fr.naitflo.pokedex.pokemon.view.model.PokemonPojoUI
 import fr.naitflo.pokedex.databinding.PokemonItemBinding
+
 
 
 val diffUtils = object : DiffUtil.ItemCallback<PokemonPojoUI>() {
@@ -20,7 +22,8 @@ val diffUtils = object : DiffUtil.ItemCallback<PokemonPojoUI>() {
     }
 }
 
-class PokemonAdapter : ListAdapter<PokemonPojoUI, PokemonViewHolder>(diffUtils) {
+class PokemonAdapter(private val onItemClick: (PokemonPojoUI: PokemonPojoUI, view: View) -> Unit,) :
+    ListAdapter<PokemonPojoUI, PokemonViewHolder>(diffUtils) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PokemonViewHolder {
         return PokemonViewHolder(
@@ -28,7 +31,7 @@ class PokemonAdapter : ListAdapter<PokemonPojoUI, PokemonViewHolder>(diffUtils) 
                 LayoutInflater.from(parent.context),
                 parent,
                 false
-            )
+            ),onItemClick
         )
     }
 
@@ -38,10 +41,18 @@ class PokemonAdapter : ListAdapter<PokemonPojoUI, PokemonViewHolder>(diffUtils) 
 }
 
 class PokemonViewHolder(
-    private val binding: PokemonItemBinding
+    private val binding: PokemonItemBinding,
+    onItemClick: (pokemonPojoUI: PokemonPojoUI, view: View) -> Unit
 ) : RecyclerView.ViewHolder(binding.root) {
 
     private lateinit var ui: PokemonPojoUI
+
+
+    init {
+        binding.root.setOnClickListener {
+            onItemClick(ui, itemView)
+        }
+    }
 
     fun bind(PokemonPojoUI: PokemonPojoUI) {
         ui = PokemonPojoUI
@@ -51,7 +62,10 @@ class PokemonViewHolder(
         Glide.with(itemView.context)
             .load(PokemonPojoUI.type1)
             .into(binding.pokemonItemEnergy)
-        binding.pokemonItemNumero.text = PokemonPojoUI.pokedexId.toString()
+        Glide.with(itemView.context)
+            .load(PokemonPojoUI.type2)
+            .into(binding.pokemonItemEnergy2)
+        binding.pokemonItemNumero.text = "#" + PokemonPojoUI.pokedexId.toString()
         binding.pokemonItemNom.text = PokemonPojoUI.nom
 
 

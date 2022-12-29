@@ -6,6 +6,6 @@ data class PokemonPojoUI(
     val image: String,
     val sprite: String,
     val type1:String,
-    val type2:String,
+    val type2:String?,
 )
 

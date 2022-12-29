@@ -9,6 +9,6 @@
     <color name="white">#FFFFFFFF</color>
 
     <color name="couleurPrincipale">#B9353A</color>
-    <color name="fondItemPokemon">#FFFFFFFF</color>
-    <color name="texteItemPokemon">#FF000000</color>
+    <color name="fondItemPokemon">#1B2631</color>
+    <color name="texteItemPokemon">#FFFFFFFF</color>
 </resources>

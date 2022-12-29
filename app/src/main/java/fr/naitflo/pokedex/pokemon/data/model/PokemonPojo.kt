@@ -26,7 +26,7 @@ data class PokemonRoom(
     val type1: String,
 
     @ColumnInfo(name = "type2")
-    val type2: String,
+    val type2: String?,
 
 ) {
     @PrimaryKey(autoGenerate = true)
