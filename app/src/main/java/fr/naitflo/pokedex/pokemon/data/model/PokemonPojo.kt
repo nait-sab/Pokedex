@@ -7,6 +7,7 @@ import androidx.room.PrimaryKey
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 
+///TODO:Ajouter les stats et résistances
 /** Object use for room */
 @Entity(tableName = "pokemon")
 data class PokemonRoom(

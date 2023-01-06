@@ -1,10 +1,10 @@
 package fr.naitflo.pokedex.pokemon.view.activity
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.HapticFeedbackConstants
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -87,6 +87,9 @@ class PokemonListeActivity : AppCompatActivity() {
 
     private fun onItemClick(pokemonPojoUI: PokemonPojoUI, view: View) {
         view.performHapticFeedback(HapticFeedbackConstants.VIRTUAL_KEY)
-        startActivity(Intent(this, PokemonInfoActivity::class.java))
+        val i = Intent(this, PokemonInfoActivity::class.java)
+        val pokemonPojoUI: PokemonPojoUI = pokemonPojoUI
+        i.putExtra("donneesPokemon", pokemonPojoUI)
+        startActivity(i)
     }
 }
