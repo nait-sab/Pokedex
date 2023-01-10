@@ -18,5 +18,18 @@
     <string name="pokemon_item_nom_exemple">Pikachu</string>
     <string name="pokemon_item_numero_exemple">#12</string>
     <string name="pokemon_item_energy_desc">Foudre</string>
+    <string name="pokemon_info_pv">PV</string>
+    <string name="pokemon_info_attaque">Attaque</string>
+    <string name="pokemon_info_defense">Défense</string>
+    <string name="pokemon_info_attaque_s">Attaque S</string>
+    <string name="pokemon_info_defense_s">Défense S</string>
+    <string name="pokemon_info_vitesse">Vitesse</string>
+    <string name="pokemon_info_vitesse_value">80</string>
+    <string name="pokemon_info_defense_s_value">70</string>
+    <string name="pokemon_info_attaque_s_value">110</string>
+    <string name="pokemon_info_defense_value">70</string>
+    <string name="pokemon_info_attaque_value">120</string>
+    <string name="pokemon_info_pv_value">80</string>
+    <string name="pokemon_info_stats_titre">Statistiques</string>
 
 </resources>

@@ -29,7 +29,6 @@ class PokemonInfoActivity : AppCompatActivity() {
     }
 
     private fun initBinding() {
-
         binding.pokemonInfoNom.text = pokemon.nom
 
         Glide.with(this)
@@ -40,10 +39,18 @@ class PokemonInfoActivity : AppCompatActivity() {
             .load(pokemon.type2)
             .into(binding.pokemonInfoEnergy2)
 
-
         Glide.with(this)
             .load(pokemon.image)
             .into(binding.pokemonInfoImg)
+
+        binding.pokemonInfoNumero.text = pokemon.pokedexId.toString()
+
+        binding.pokemonInfoPv.text = pokemon.HP.toString()
+        binding.pokemonInfoAttaque.text = pokemon.attack.toString()
+        binding.pokemonInfoDefense.text = pokemon.defense.toString()
+        binding.pokemonInfoAttaqueS.text = pokemon.special_attack.toString()
+        binding.pokemonInfoDefenseS.text = pokemon.special_defense.toString()
+        binding.pokemonInfoVitesse.text = pokemon.speed.toString();
 
         binding.pokemonInfoFermer.setOnClickListener {
             fermer()
