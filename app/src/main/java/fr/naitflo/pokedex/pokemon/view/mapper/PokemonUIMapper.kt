@@ -36,7 +36,9 @@ fun List<PokemonPojoDomain>.fromDomainToRoom(): List<PokemonPojoUI> {
             defense = it.defense,
             special_attack = it.special_attack,
             special_defense = it.special_defense,
-            speed = it.speed
+            speed = it.speed,
+            date_ajout = it.date_ajout
+
         )
     }
 }

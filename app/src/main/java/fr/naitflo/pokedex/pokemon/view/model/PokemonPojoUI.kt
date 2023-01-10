@@ -32,5 +32,6 @@ data class PokemonPojoUI(
     val special_attack: Int,
     val special_defense: Int,
     val speed: Int,
+    val date_ajout:String,
 ):java.io.Serializable
 
