@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="horizontal"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@drawable/fond_pokemon_item"
+    android:padding="10dp"
+    android:layout_width="match_parent"
+    android:layout_marginHorizontal="20dp"
+    android:layout_marginVertical="10dp"
+    android:layout_height="wrap_content">
+    
+    <ImageView
+        android:id="@+id/pokemon_item_sprite"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/fond_bouton_circulaire"
+        android:src="@drawable/ic_pokeball"
+        android:layout_gravity="center_vertical"
+        android:contentDescription="@string/pokemon_item_sprite_desc" />
+
+    <LinearLayout
+        android:layout_marginLeft="10dp"
+        android:orientation="vertical"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/pokemon_item_nom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/pokemon_item_nom_exemple"
+            android:textSize="16sp"
+            android:textColor="@color/texteItemPokemon"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/pokemon_item_numero"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/pokemon_item_numero_exemple"
+            android:textSize="14sp"
+            android:textColor="@color/texteItemPokemon"/>
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/pokemon_item_energy2"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/ic_pokeball"
+        android:layout_gravity="center_vertical"
+        android:contentDescription="@string/pokemon_item_energy_desc" />
+
+    <ImageView
+        android:id="@+id/pokemon_item_energy"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/ic_pokeball"
+        android:layout_gravity="center_vertical"
+        android:contentDescription="@string/pokemon_item_energy_desc" />
+
+
+</LinearLayout>

@@ -3,23 +3,19 @@ import android.app.Application
 import androidx.room.Room
 
 
-class CustomApplication : Application() {
-
-    // Create unique instance of this class
+class App : Application() {
     companion object {
-        lateinit var instance: CustomApplication
+        lateinit var instance: App
     }
 
-
-    val mApplicationDatabase: CustomRoomDatabase by lazy {
+    val appDatabase: Database by lazy {
         Room.databaseBuilder(
             applicationContext,
-            CustomRoomDatabase::class.java,
+            Database::class.java,
             "BDDPokedex"
         ).fallbackToDestructiveMigration().build()
     }
 
-    // When application goes to onCreate, this means we can set the instance
     override fun onCreate() {
         super.onCreate()
         instance = this
