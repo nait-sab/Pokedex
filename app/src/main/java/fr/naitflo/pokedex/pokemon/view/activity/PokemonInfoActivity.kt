@@ -21,7 +21,7 @@ class PokemonInfoActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityPokemonInfoBinding.inflate(layoutInflater)
 
-        //TODO:getSerializableExtra a changer dans le future
+        //TODO:getSerializableExtra a changer dans le future si trouve mieux
         pokemon = intent.getSerializableExtra("donneesPokemon") as PokemonPojoUI
 
         setContentView(binding.root)
@@ -39,6 +39,11 @@ class PokemonInfoActivity : AppCompatActivity() {
         Glide.with(this)
             .load(pokemon.type2)
             .into(binding.pokemonInfoEnergy2)
+
+
+        Glide.with(this)
+            .load(pokemon.image)
+            .into(binding.pokemonInfoImg)
 
         binding.pokemonInfoFermer.setOnClickListener {
             fermer()

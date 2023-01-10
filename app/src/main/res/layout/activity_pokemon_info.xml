@@ -11,70 +11,83 @@
         android:id="@+id/pokemon_info_titre"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/white"
-        android:text="@string/app_name"
-        android:textSize="30sp"
-        android:gravity="center"
-        android:textColor="@color/black"
-        android:textStyle="bold"
-        android:layout_alignParentTop="true"
         android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:padding="10dp" />
+        android:background="@color/white"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="@string/app_name"
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        android:textStyle="bold" />
 
-
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/pokemon_info_titre"
+    android:layout_marginStart="10dp"
+    android:orientation="vertical"
+    android:padding="10dp">
 
     <LinearLayout
-        android:layout_marginStart="10dp"
-        android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/pokemon_info_titre"
-        android:padding="10dp"
-        >
+        android:layout_marginStart="10dp"
+        android:orientation="horizontal"
+        android:padding="10dp">
 
         <TextView
             android:id="@+id/pokemon_info_nom"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/pokemon_item_nom_exemple"
-            android:textSize="30sp"
             android:textColor="@color/white"
-            android:textStyle="bold"/>
+            android:textSize="30sp"
+            android:textStyle="bold" />
 
         <ImageView
-            android:layout_marginLeft="150dp"
             android:id="@+id/pokemon_info_energy2"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:src="@drawable/ic_pokeball"
             android:layout_gravity="center_vertical"
-            android:contentDescription="@string/pokemon_item_energy_desc" />
+            android:contentDescription="@string/pokemon_item_energy_desc"
+            android:src="@drawable/ic_pokeball" />
 
         <ImageView
             android:id="@+id/pokemon_info_energy"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:src="@drawable/ic_pokeball"
             android:layout_gravity="center_vertical"
-            android:contentDescription="@string/pokemon_item_energy_desc" />
+            android:contentDescription="@string/pokemon_item_energy_desc"
+            android:src="@drawable/ic_pokeball" />
 
     </LinearLayout>
 
+    <ImageView
+        android:id="@+id/pokemon_info_img"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_below="@id/pokemon_info_titre"
+        android:layout_gravity="center_vertical"
+        android:contentDescription="@string/pokemon_item_energy_desc"
+        android:src="@drawable/ic_pokeball" />
 
+</LinearLayout>
 
     <!-- Bouton Fermer -->
     <ImageButton
         android:id="@+id/pokemon_info_fermer"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:background="@drawable/fond_bouton_circulaire"
-        android:contentDescription="@string/pokemon_liste_logoff"
-        android:layout_marginBottom="10dp"
-        android:layout_marginEnd="20dp"
-        android:src="@drawable/ic_close"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/fond_bouton_circulaire"
+        android:contentDescription="@string/pokemon_liste_logoff"
+        android:src="@drawable/ic_close"
         app:tint="@color/black" />
 
 </RelativeLayout>
