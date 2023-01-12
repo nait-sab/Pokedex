@@ -1,11 +1,23 @@
 package fr.naitflo.pokedex.pokemon.view.model
 
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
+
+
+
+sealed class MyPokemonForRecyclerView()
+
+data class PokemonHeader(
+    val header: String
+) : MyPokemonForRecyclerView()
+
+@Parcelize
 data class PokemonPojoUI(
-    val nom: String,
+    val nom: String?,
     val pokedexId: Int,
-    val image: String,
-    val sprite: String,
-    val type1: String,
+    val image: String?,
+    val sprite: String?,
+    val type1: String?,
     val type2: String?,
     val generation: Int,
     val resistanceNormal: Double,
@@ -32,6 +44,11 @@ data class PokemonPojoUI(
     val special_attack: Int,
     val special_defense: Int,
     val speed: Int,
-    val date_ajout:String,
-):java.io.Serializable
+    val date_ajout: String?,
+):MyPokemonForRecyclerView(), Parcelable
 
+
+
+data class PokemonFooter(
+    val footer: String
+) : MyPokemonForRecyclerView()

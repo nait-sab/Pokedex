@@ -136,7 +136,7 @@ data class PokemonRetrofit(
     val typedata: List<TypeData>,
 
     @Expose
-    @SerializedName("generation")
+    @SerializedName("apiGeneration")
     val generation: Int,
 
     @Expose

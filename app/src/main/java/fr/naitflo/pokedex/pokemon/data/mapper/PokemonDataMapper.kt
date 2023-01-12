@@ -8,9 +8,9 @@ import java.time.format.DateTimeFormatter
 
 fun PokemonRetrofit.toRoom(): PokemonRoom {
     val current = LocalDateTime.now()
-
-    val formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSS")
+    val formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy")
     val formatted = current.format(formatter)
+
     return PokemonRoom(
         nom = nom,
         pokedexId = pokedexId,
