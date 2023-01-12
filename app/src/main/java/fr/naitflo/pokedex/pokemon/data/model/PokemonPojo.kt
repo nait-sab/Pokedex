@@ -104,6 +104,9 @@ data class PokemonRoom(
     @ColumnInfo(name = "speed")
     val speed: Int,
 
+    @ColumnInfo(name = "date_ajout")
+    val date_ajout: String,
+
     ) {
     @PrimaryKey(autoGenerate = true)
     var id: Long = 0
@@ -133,7 +136,7 @@ data class PokemonRetrofit(
     val typedata: List<TypeData>,
 
     @Expose
-    @SerializedName("generation")
+    @SerializedName("apiGeneration")
     val generation: Int,
 
     @Expose

@@ -1,6 +1,7 @@
 package fr.naitflo.pokedex.pokemon.view.activity
 
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
@@ -22,8 +23,11 @@ class PokemonInfoActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityPokemonInfoBinding.inflate(layoutInflater)
 
-        //TODO:getSerializableExtra a changer dans le future si trouve mieux
-        pokemon = intent.getSerializableExtra("donneesPokemon") as PokemonPojoUI
+         pokemon = if (Build.VERSION.SDK_INT >= 33) {
+             intent.getParcelableExtra("donneesPokemon", PokemonPojoUI::class.java)
+         }  else {
+             intent.getParcelableExtra("donneesPokemon")
+         }!!
 
         setContentView(binding.root)
         initBinding()
@@ -46,7 +50,7 @@ class PokemonInfoActivity : AppCompatActivity() {
             .load(pokemon.image)
             .into(binding.pokemonInfoImg)
 
-        binding.pokemonInfoNumero.text = pokemon.pokedexId.toString()
+        binding.pokemonInfoNumero.text ="#"+pokemon.pokedexId.toString()
 
         binding.pokemonInfoPv.text = pokemon.HP.toString()
         binding.pokemonInfoAttaque.text = pokemon.attack.toString()

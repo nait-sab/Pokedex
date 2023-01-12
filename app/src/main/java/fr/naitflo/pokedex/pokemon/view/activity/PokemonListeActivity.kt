@@ -20,6 +20,7 @@ import fr.naitflo.pokedex.databinding.ActivityPokemonInfoBinding
 import fr.naitflo.pokedex.databinding.ActivityPokemonListeBinding
 import fr.naitflo.pokedex.firebase.LoginActivity
 import fr.naitflo.pokedex.pokemon.view.adapter.PokemonAdapter
+import fr.naitflo.pokedex.pokemon.view.model.MyPokemonForRecyclerView
 import fr.naitflo.pokedex.pokemon.view.model.PokemonPojoUI
 import fr.naitflo.pokedex.pokemon.view.viewModel.PokemonViewModel
 
@@ -34,7 +35,7 @@ class PokemonListeActivity : AppCompatActivity() {
     private lateinit var firebaseAuth: FirebaseAuth
     private lateinit var adapter: PokemonAdapter
 
-    private var pokemonListObserver = Observer<List<PokemonPojoUI>> {
+    private var pokemonListObserver = Observer<List<MyPokemonForRecyclerView>> {
         adapter.submitList(it)
     }
 

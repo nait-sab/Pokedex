@@ -3,8 +3,13 @@ package fr.naitflo.pokedex.pokemon.data.mapper
 import fr.naitflo.pokedex.pokemon.data.model.PokemonRetrofit
 import fr.naitflo.pokedex.pokemon.data.model.PokemonRoom
 import fr.naitflo.pokedex.pokemon.domain.model.PokemonPojoDomain
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
 
 fun PokemonRetrofit.toRoom(): PokemonRoom {
+    val current = LocalDateTime.now()
+    val formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy")
+    val formatted = current.format(formatter)
 
     return PokemonRoom(
         nom = nom,
@@ -37,8 +42,8 @@ fun PokemonRetrofit.toRoom(): PokemonRoom {
         defense = stats.defense,
         special_attack = stats.special_attack,
         special_defense = stats.special_defense,
-        speed = stats.speed
-
+        speed = stats.speed,
+        date_ajout = formatted
     )
 }
 
@@ -75,7 +80,8 @@ fun List<PokemonRoom>.fromRoomToDomain(): List<PokemonPojoDomain> {
             defense = it.defense,
             special_attack = it.special_attack,
             special_defense = it.special_defense,
-            speed = it.speed
+            speed = it.speed,
+            date_ajout = it.date_ajout
         )
     }
 }

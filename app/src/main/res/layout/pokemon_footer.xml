@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="horizontal"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@drawable/fond_stats"
+    android:padding="10dp"
+    android:layout_width="match_parent"
+    android:layout_marginHorizontal="20dp"
+    android:layout_marginVertical="10dp"
+    android:layout_height="wrap_content">
+
+
+    <TextView
+        android:id="@+id/pokemon_generation_footer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/pokemon_item_nom_exemple"
+        android:textSize="16sp"
+        android:textColor="@color/texteItemPokemon"
+        android:textStyle="bold"/>
+
+
+</LinearLayout>
