@@ -52,12 +52,33 @@ class PokemonInfoActivity : AppCompatActivity() {
 
         binding.pokemonInfoNumero.text ="#"+pokemon.pokedexId.toString()
 
+        // Stats
         binding.pokemonInfoPv.text = pokemon.HP.toString()
         binding.pokemonInfoAttaque.text = pokemon.attack.toString()
         binding.pokemonInfoDefense.text = pokemon.defense.toString()
         binding.pokemonInfoAttaqueS.text = pokemon.special_attack.toString()
         binding.pokemonInfoDefenseS.text = pokemon.special_defense.toString()
         binding.pokemonInfoVitesse.text = pokemon.speed.toString();
+
+        // Resistances
+        binding.pokemonInfoResNormalTexte.text = pokemon.resistanceNormal.toString();
+        binding.pokemonInfoResCombatTexte.text = pokemon.resistanceCombat.toString();
+        binding.pokemonInfoResVolTexte.text = pokemon.resistanceVol.toString();
+        binding.pokemonInfoResPoisonTexte.text = pokemon.resistancePoison.toString();
+        binding.pokemonInfoResSolTexte.text = pokemon.resistanceSol.toString();
+        binding.pokemonInfoResRocheTexte.text = pokemon.resistanceRoche.toString();
+        binding.pokemonInfoResInsecteTexte.text = pokemon.resistanceInsecte.toString();
+        binding.pokemonInfoResSpectreTexte.text = pokemon.resistanceSpectre.toString();
+        binding.pokemonInfoResAcierTexte.text = pokemon.resistanceAcier.toString();
+        binding.pokemonInfoResFeuTexte.text = pokemon.resistanceFeu.toString();
+        binding.pokemonInfoResEauTexte.text = pokemon.resistanceEau.toString();
+        binding.pokemonInfoResPlanteTexte.text = pokemon.resistancePlante.toString();
+        binding.pokemonInfoResElectrikTexte.text = pokemon.resistanceElectrik.toString();
+        binding.pokemonInfoResPsyTexte.text = pokemon.resistancePsy.toString();
+        binding.pokemonInfoResGlaceTexte.text = pokemon.resistanceGlace.toString();
+        binding.pokemonInfoResDragonTexte.text = pokemon.resistanceDragon.toString();
+        binding.pokemonInfoResTenebreTexte.text = pokemon.resistanceTenebres.toString();
+        binding.pokemonInfoResFeeTexte.text = pokemon.resistanceFee.toString();
 
         binding.pokemonInfoFermer.setOnClickListener {
             fermer()

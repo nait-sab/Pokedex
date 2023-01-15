@@ -31,5 +31,7 @@
     <string name="pokemon_info_attaque_value">120</string>
     <string name="pokemon_info_pv_value">80</string>
     <string name="pokemon_info_stats_titre">Statistiques</string>
+    <string name="pokemon_liste_id">Utilisateur ID :</string>
+    <string name="pokemon_info_res_titre">Résistances</string>
 
 </resources>

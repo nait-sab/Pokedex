@@ -23,13 +23,26 @@
         android:layout_alignParentEnd="true"
         android:padding="10dp"/>
 
+    <TextView
+        android:id="@+id/pokemon_liste_id"
+        android:layout_below="@+id/pokemon_liste_titre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/pokemon_liste_id"
+        android:textSize="14sp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:padding="10dp"/>
+
     <!-- Liste -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/pokemon_liste_contenu"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@id/pokemon_liste_footer"
-        android:layout_below="@id/pokemon_liste_titre"
+        android:layout_below="@id/pokemon_liste_id"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true" />
 
