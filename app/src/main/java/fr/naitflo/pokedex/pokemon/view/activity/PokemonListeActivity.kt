@@ -16,6 +16,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.auth.FirebaseAuth
+import fr.naitflo.pokedex.R
 import fr.naitflo.pokedex.databinding.ActivityPokemonInfoBinding
 import fr.naitflo.pokedex.databinding.ActivityPokemonListeBinding
 import fr.naitflo.pokedex.firebase.LoginActivity
@@ -43,16 +44,12 @@ class PokemonListeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityPokemonListeBinding.inflate(layoutInflater)
         firebaseAuth = FirebaseAuth.getInstance()
-        setContentView(binding.root)
         viewModel = ViewModelProvider(this)[PokemonViewModel::class.java]
         adapter = PokemonAdapter() { item, view ->
             onItemClick(item, view)
         }
-        binding.pokemonListeContenu.layoutManager = LinearLayoutManager(
-            this,
-            RecyclerView.VERTICAL, false
-        )
-        binding.pokemonListeContenu.adapter = adapter
+
+        setContentView(binding.root)
         initBinding()
     }
 
@@ -68,6 +65,16 @@ class PokemonListeActivity : AppCompatActivity() {
         binding.pokemonListeAdd.setOnClickListener() {
             ajouterPokemon()
         }
+
+        binding.pokemonListeContenu.layoutManager = LinearLayoutManager(
+            this,
+            RecyclerView.VERTICAL, false
+        )
+
+        binding.pokemonListeContenu.adapter = adapter
+
+        val utilisateurID = getString(R.string.pokemon_liste_id) + " " + firebaseAuth.uid
+        binding.pokemonListeId.text = utilisateurID;
     }
 
     override fun onStart() {

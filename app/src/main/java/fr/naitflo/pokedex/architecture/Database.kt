@@ -9,7 +9,7 @@ import fr.naitflo.pokedex.pokemon.data.model.PokemonRoom
     entities = [
         PokemonRoom::class
     ],
-    version = 3,
+    version = 4,
     exportSchema = false
 )
 abstract class Database : RoomDatabase() {

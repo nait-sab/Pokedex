@@ -22,277 +22,959 @@
         android:textSize="30sp"
         android:textStyle="bold" />
 
-    <!-- Nom Pokémon + Énergies -->
-    <LinearLayout
-        android:id="@+id/pokemon_info_identite"
+    <ScrollView
         android:layout_below="@+id/pokemon_info_titre"
+        android:fillViewport="true"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:padding="20dp">
+        android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/pokemon_info_nom"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="@string/pokemon_item_nom_exemple"
-            android:textColor="@color/white"
-            android:textSize="30sp"
-            android:layout_weight="1"
-            android:layout_gravity="center_vertical"
-            android:textStyle="bold"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-        <ImageView
-            android:id="@+id/pokemon_info_energy2"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:contentDescription="@string/pokemon_item_energy_desc"
-            android:src="@drawable/ic_pokeball" />
-
-        <ImageView
-            android:id="@+id/pokemon_info_energy"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:contentDescription="@string/pokemon_item_energy_desc"
-            android:src="@drawable/ic_pokeball" />
-
-    </LinearLayout>
-
-    <!-- Carte Pokémon -->
-    <FrameLayout
-        android:id="@+id/pokemon_info_carte"
-        android:layout_below="@id/pokemon_info_identite"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:background="@drawable/fond_carte_pokemon"
-        android:layout_marginHorizontal="20dp">
-
-        <TextView
-            android:id="@+id/pokemon_info_numero"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/pokemon_item_nom_exemple"
-            android:textColor="@color/black"
-            android:padding="10dp"
-            android:textSize="15sp"
-            android:background="@drawable/fond_carte_numero_pokemon"
-            />
-
-        <ImageView
-            android:id="@+id/pokemon_info_img"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:layout_gravity="center"
-            android:contentDescription="@string/pokemon_item_energy_desc"
-            android:src="@drawable/ic_pokeball" />
-
-    </FrameLayout>
-
-    <!-- Stats -->
-    <LinearLayout
-        android:id="@+id/pokemon_info_stats"
-        android:layout_below="@+id/pokemon_info_carte"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="20dp"
-        android:orientation="vertical">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/pokemon_info_stats_titre"
-            android:textColor="@color/white"
-            android:textStyle="bold"
-            android:textSize="20sp"/>
-
-        <!-- PV -->
-        <LinearLayout
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="5dp"
-            android:background="@drawable/fond_stats"
-            android:paddingVertical="5dp"
-            android:paddingHorizontal="15dp"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="0dp"
+            <!-- Nom Pokémon + Énergies -->
+            <LinearLayout
+                android:id="@+id/pokemon_info_identite"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/pokemon_info_pv"
-                android:textSize="16sp"
-                android:layout_weight="1"
-                android:textColor="@color/black"/>
+                android:orientation="horizontal"
+                android:padding="20dp">
 
-            <TextView
-                android:id="@+id/pokemon_info_pv"
-                android:layout_width="0dp"
+                <TextView
+                    android:id="@+id/pokemon_info_nom"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/pokemon_item_nom_exemple"
+                    android:textColor="@color/white"
+                    android:textSize="30sp"
+                    android:layout_weight="1"
+                    android:layout_gravity="center_vertical"
+                    android:textStyle="bold"/>
+
+                <ImageView
+                    android:id="@+id/pokemon_info_energy2"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:contentDescription="@string/pokemon_item_energy_desc"
+                    android:src="@drawable/ic_pokeball" />
+
+                <ImageView
+                    android:id="@+id/pokemon_info_energy"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:contentDescription="@string/pokemon_item_energy_desc"
+                    android:src="@drawable/ic_pokeball" />
+
+            </LinearLayout>
+
+            <!-- Carte Pokémon -->
+            <FrameLayout
+                android:id="@+id/pokemon_info_carte"
+                android:layout_below="@id/pokemon_info_identite"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:background="@drawable/fond_carte_pokemon"
+                android:layout_marginHorizontal="20dp">
+
+                <TextView
+                    android:id="@+id/pokemon_info_numero"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/pokemon_item_nom_exemple"
+                    android:textColor="@color/black"
+                    android:padding="10dp"
+                    android:textSize="15sp"
+                    android:background="@drawable/fond_carte_numero_pokemon"
+                    />
+
+                <ImageView
+                    android:id="@+id/pokemon_info_img"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_gravity="center"
+                    android:contentDescription="@string/pokemon_item_energy_desc"
+                    android:src="@drawable/ic_pokeball" />
+
+            </FrameLayout>
+
+            <!-- Stats -->
+            <LinearLayout
+                android:id="@+id/pokemon_info_stats"
+                android:layout_below="@+id/pokemon_info_carte"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/pokemon_info_pv_value"
-                android:textSize="16sp"
-                android:layout_weight="1"
-                android:gravity="end"
-                android:textColor="@color/white"/>
+                android:padding="20dp"
+                android:orientation="vertical">
 
-        </LinearLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/pokemon_info_stats_titre"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:textSize="20sp"/>
 
-        <!-- Attaque -->
-        <LinearLayout
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginVertical="5dp"
-            android:background="@drawable/fond_stats"
-            android:paddingVertical="5dp"
-            android:paddingHorizontal="15dp"
-            android:orientation="horizontal">
+                <!-- PV -->
+                <LinearLayout
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/fond_stats"
+                    android:paddingVertical="5dp"
+                    android:paddingHorizontal="15dp"
+                    android:orientation="horizontal">
 
-            <TextView
-                android:layout_width="0dp"
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/pokemon_info_pv"
+                        android:textSize="16sp"
+                        android:layout_weight="1"
+                        android:textColor="@color/black"/>
+
+                    <TextView
+                        android:id="@+id/pokemon_info_pv"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/pokemon_info_pv_value"
+                        android:textSize="16sp"
+                        android:layout_weight="1"
+                        android:gravity="end"
+                        android:textColor="@color/white"/>
+
+                </LinearLayout>
+
+                <!-- Attaque -->
+                <LinearLayout
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginVertical="5dp"
+                    android:background="@drawable/fond_stats"
+                    android:paddingVertical="5dp"
+                    android:paddingHorizontal="15dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/pokemon_info_attaque"
+                        android:textSize="16sp"
+                        android:layout_weight="1"
+                        android:textColor="@color/black"/>
+
+                    <TextView
+                        android:id="@+id/pokemon_info_attaque"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/pokemon_info_attaque_value"
+                        android:textSize="16sp"
+                        android:layout_weight="1"
+                        android:gravity="end"
+                        android:textColor="@color/white"/>
+
+                </LinearLayout>
+
+                <!-- Défense -->
+                <LinearLayout
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginVertical="5dp"
+                    android:background="@drawable/fond_stats"
+                    android:paddingVertical="5dp"
+                    android:paddingHorizontal="15dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/pokemon_info_defense"
+                        android:textSize="16sp"
+                        android:layout_weight="1"
+                        android:textColor="@color/black"/>
+
+                    <TextView
+                        android:id="@+id/pokemon_info_defense"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/pokemon_info_defense_value"
+                        android:textSize="16sp"
+                        android:layout_weight="1"
+                        android:gravity="end"
+                        android:textColor="@color/white"/>
+
+                </LinearLayout>
+
+                <!-- Attaque S -->
+                <LinearLayout
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginVertical="5dp"
+                    android:background="@drawable/fond_stats"
+                    android:paddingVertical="5dp"
+                    android:paddingHorizontal="15dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/pokemon_info_attaque_s"
+                        android:textSize="16sp"
+                        android:layout_weight="1"
+                        android:textColor="@color/black"/>
+
+                    <TextView
+                        android:id="@+id/pokemon_info_attaque_s"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/pokemon_info_attaque_s_value"
+                        android:textSize="16sp"
+                        android:layout_weight="1"
+                        android:gravity="end"
+                        android:textColor="@color/white"/>
+
+                </LinearLayout>
+
+                <!-- Défense S -->
+                <LinearLayout
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginVertical="5dp"
+                    android:background="@drawable/fond_stats"
+                    android:paddingVertical="5dp"
+                    android:paddingHorizontal="15dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/pokemon_info_defense_s"
+                        android:textSize="16sp"
+                        android:layout_weight="1"
+                        android:textColor="@color/black"/>
+
+                    <TextView
+                        android:id="@+id/pokemon_info_defense_s"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/pokemon_info_defense_s_value"
+                        android:textSize="16sp"
+                        android:layout_weight="1"
+                        android:gravity="end"
+                        android:textColor="@color/white"/>
+
+                </LinearLayout>
+
+                <!-- Vitesse -->
+                <LinearLayout
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginVertical="5dp"
+                    android:background="@drawable/fond_stats"
+                    android:paddingVertical="5dp"
+                    android:paddingHorizontal="15dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/pokemon_info_vitesse"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/pokemon_info_vitesse"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/pokemon_info_vitesse_value"
+                        android:textSize="16sp"
+                        android:layout_weight="1"
+                        android:gravity="end"
+                        android:textColor="@color/white"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- Résistances -->
+
+            <LinearLayout
+                android:id="@+id/pokemon_info_resistances"
+                android:layout_below="@+id/pokemon_info_stats"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/pokemon_info_attaque"
-                android:textSize="16sp"
-                android:layout_weight="1"
-                android:textColor="@color/black"/>
+                android:paddingTop="20dp"
+                android:paddingHorizontal="20dp"
+                android:paddingBottom="100dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/pokemon_info_attaque"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:text="@string/pokemon_info_attaque_value"
-                android:textSize="16sp"
-                android:layout_weight="1"
-                android:gravity="end"
-                android:textColor="@color/white"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/pokemon_info_res_titre"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:textSize="20sp"/>
 
-        </LinearLayout>
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
 
-        <!-- Défense -->
-        <LinearLayout
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginVertical="5dp"
-            android:background="@drawable/fond_stats"
-            android:paddingVertical="5dp"
-            android:paddingHorizontal="15dp"
-            android:orientation="horizontal">
+                    <TableRow
+                        android:paddingVertical="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
 
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:text="@string/pokemon_info_defense"
-                android:textSize="16sp"
-                android:layout_weight="1"
-                android:textColor="@color/black"/>
+                        <!-- Normal -->
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:background="@drawable/fond_stats"
+                            android:paddingVertical="5dp"
+                            android:layout_weight="1"
+                            android:layout_marginHorizontal="5dp"
+                            android:paddingHorizontal="15dp"
+                            android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/pokemon_info_defense"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:text="@string/pokemon_info_defense_value"
-                android:textSize="16sp"
-                android:layout_weight="1"
-                android:gravity="end"
-                android:textColor="@color/white"/>
+                            <ImageView
+                                android:id="@+id/pokemon_info_res_normal_icone"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:contentDescription="@string/pokemon_item_energy_desc"
+                                android:src="@drawable/ic_pokeball" />
 
-        </LinearLayout>
+                            <TextView
+                                android:id="@+id/pokemon_info_res_normal_texte"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="@string/pokemon_info_pv_value"
+                                android:textSize="16sp"
+                                android:layout_gravity="center_vertical"
+                                android:layout_weight="1"
+                                android:gravity="end"
+                                android:textColor="@color/white"/>
 
-        <!-- Attaque S -->
-        <LinearLayout
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginVertical="5dp"
-            android:background="@drawable/fond_stats"
-            android:paddingVertical="5dp"
-            android:paddingHorizontal="15dp"
-            android:orientation="horizontal">
+                        </LinearLayout>
 
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:text="@string/pokemon_info_attaque_s"
-                android:textSize="16sp"
-                android:layout_weight="1"
-                android:textColor="@color/black"/>
+                        <!-- Combat -->
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:background="@drawable/fond_stats"
+                            android:paddingVertical="5dp"
+                            android:layout_weight="1"
+                            android:layout_marginHorizontal="5dp"
+                            android:paddingHorizontal="15dp"
+                            android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/pokemon_info_attaque_s"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:text="@string/pokemon_info_attaque_s_value"
-                android:textSize="16sp"
-                android:layout_weight="1"
-                android:gravity="end"
-                android:textColor="@color/white"/>
+                            <ImageView
+                                android:id="@+id/pokemon_info_res_combat_icone"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:contentDescription="@string/pokemon_item_energy_desc"
+                                android:src="@drawable/ic_pokeball" />
 
-        </LinearLayout>
+                            <TextView
+                                android:id="@+id/pokemon_info_res_combat_texte"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="@string/pokemon_info_pv_value"
+                                android:textSize="16sp"
+                                android:layout_gravity="center_vertical"
+                                android:layout_weight="1"
+                                android:gravity="end"
+                                android:textColor="@color/white"/>
 
-        <!-- Défense S -->
-        <LinearLayout
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginVertical="5dp"
-            android:background="@drawable/fond_stats"
-            android:paddingVertical="5dp"
-            android:paddingHorizontal="15dp"
-            android:orientation="horizontal">
+                        </LinearLayout>
 
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:text="@string/pokemon_info_defense_s"
-                android:textSize="16sp"
-                android:layout_weight="1"
-                android:textColor="@color/black"/>
+                    </TableRow>
 
-            <TextView
-                android:id="@+id/pokemon_info_defense_s"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:text="@string/pokemon_info_defense_s_value"
-                android:textSize="16sp"
-                android:layout_weight="1"
-                android:gravity="end"
-                android:textColor="@color/white"/>
+                    <TableRow
+                        android:paddingVertical="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
 
-        </LinearLayout>
+                        <!-- Vol -->
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:background="@drawable/fond_stats"
+                            android:paddingVertical="5dp"
+                            android:layout_weight="1"
+                            android:layout_marginHorizontal="5dp"
+                            android:paddingHorizontal="15dp"
+                            android:orientation="horizontal">
 
-        <!-- Vitesse -->
-        <LinearLayout
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginVertical="5dp"
-            android:background="@drawable/fond_stats"
-            android:paddingVertical="5dp"
-            android:paddingHorizontal="15dp"
-            android:orientation="horizontal">
+                            <ImageView
+                                android:id="@+id/pokemon_info_res_vol_icone"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:contentDescription="@string/pokemon_item_energy_desc"
+                                android:src="@drawable/ic_pokeball" />
 
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/pokemon_info_vitesse"
-                android:textColor="@color/black"
-                android:textSize="16sp" />
+                            <TextView
+                                android:id="@+id/pokemon_info_res_vol_texte"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="@string/pokemon_info_pv_value"
+                                android:textSize="16sp"
+                                android:layout_gravity="center_vertical"
+                                android:layout_weight="1"
+                                android:gravity="end"
+                                android:textColor="@color/white"/>
 
-            <TextView
-                android:id="@+id/pokemon_info_vitesse"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:text="@string/pokemon_info_vitesse_value"
-                android:textSize="16sp"
-                android:layout_weight="1"
-                android:gravity="end"
-                android:textColor="@color/white"/>
+                        </LinearLayout>
 
-        </LinearLayout>
+                        <!-- Poison -->
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:background="@drawable/fond_stats"
+                            android:paddingVertical="5dp"
+                            android:layout_weight="1"
+                            android:layout_marginHorizontal="5dp"
+                            android:paddingHorizontal="15dp"
+                            android:orientation="horizontal">
 
-    </LinearLayout>
+                            <ImageView
+                                android:id="@+id/pokemon_info_res_poison_icone"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:contentDescription="@string/pokemon_item_energy_desc"
+                                android:src="@drawable/ic_pokeball" />
+
+                            <TextView
+                                android:id="@+id/pokemon_info_res_poison_texte"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="@string/pokemon_info_pv_value"
+                                android:textSize="16sp"
+                                android:layout_gravity="center_vertical"
+                                android:layout_weight="1"
+                                android:gravity="end"
+                                android:textColor="@color/white"/>
+
+                        </LinearLayout>
+
+                    </TableRow>
+
+                    <TableRow
+                        android:paddingVertical="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <!-- Sol -->
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:background="@drawable/fond_stats"
+                            android:paddingVertical="5dp"
+                            android:layout_weight="1"
+                            android:layout_marginHorizontal="5dp"
+                            android:paddingHorizontal="15dp"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:id="@+id/pokemon_info_res_sol_icone"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:contentDescription="@string/pokemon_item_energy_desc"
+                                android:src="@drawable/ic_pokeball" />
+
+                            <TextView
+                                android:id="@+id/pokemon_info_res_sol_texte"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="@string/pokemon_info_pv_value"
+                                android:textSize="16sp"
+                                android:layout_gravity="center_vertical"
+                                android:layout_weight="1"
+                                android:gravity="end"
+                                android:textColor="@color/white"/>
+
+                        </LinearLayout>
+
+                        <!-- Roche -->
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:background="@drawable/fond_stats"
+                            android:paddingVertical="5dp"
+                            android:layout_weight="1"
+                            android:layout_marginHorizontal="5dp"
+                            android:paddingHorizontal="15dp"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:id="@+id/pokemon_info_res_roche_icone"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:contentDescription="@string/pokemon_item_energy_desc"
+                                android:src="@drawable/ic_pokeball" />
+
+                            <TextView
+                                android:id="@+id/pokemon_info_res_roche_texte"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="@string/pokemon_info_pv_value"
+                                android:textSize="16sp"
+                                android:layout_gravity="center_vertical"
+                                android:layout_weight="1"
+                                android:gravity="end"
+                                android:textColor="@color/white"/>
+
+                        </LinearLayout>
+
+                    </TableRow>
+
+                    <TableRow
+                        android:paddingVertical="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <!-- Insecte -->
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:background="@drawable/fond_stats"
+                            android:paddingVertical="5dp"
+                            android:layout_weight="1"
+                            android:layout_marginHorizontal="5dp"
+                            android:paddingHorizontal="15dp"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:id="@+id/pokemon_info_res_insecte_icone"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:contentDescription="@string/pokemon_item_energy_desc"
+                                android:src="@drawable/ic_pokeball" />
+
+                            <TextView
+                                android:id="@+id/pokemon_info_res_insecte_texte"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="@string/pokemon_info_pv_value"
+                                android:textSize="16sp"
+                                android:layout_gravity="center_vertical"
+                                android:layout_weight="1"
+                                android:gravity="end"
+                                android:textColor="@color/white"/>
+
+                        </LinearLayout>
+
+                        <!-- Spectre -->
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:background="@drawable/fond_stats"
+                            android:paddingVertical="5dp"
+                            android:layout_weight="1"
+                            android:layout_marginHorizontal="5dp"
+                            android:paddingHorizontal="15dp"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:id="@+id/pokemon_info_res_spectre_icone"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:contentDescription="@string/pokemon_item_energy_desc"
+                                android:src="@drawable/ic_pokeball" />
+
+                            <TextView
+                                android:id="@+id/pokemon_info_res_spectre_texte"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="@string/pokemon_info_pv_value"
+                                android:textSize="16sp"
+                                android:layout_gravity="center_vertical"
+                                android:layout_weight="1"
+                                android:gravity="end"
+                                android:textColor="@color/white"/>
+
+                        </LinearLayout>
+
+                    </TableRow>
+
+                    <TableRow
+                        android:paddingVertical="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <!-- Acier -->
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:background="@drawable/fond_stats"
+                            android:paddingVertical="5dp"
+                            android:layout_weight="1"
+                            android:layout_marginHorizontal="5dp"
+                            android:paddingHorizontal="15dp"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:id="@+id/pokemon_info_res_acier_icone"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:contentDescription="@string/pokemon_item_energy_desc"
+                                android:src="@drawable/ic_pokeball" />
+
+                            <TextView
+                                android:id="@+id/pokemon_info_res_acier_texte"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="@string/pokemon_info_pv_value"
+                                android:textSize="16sp"
+                                android:layout_gravity="center_vertical"
+                                android:layout_weight="1"
+                                android:gravity="end"
+                                android:textColor="@color/white"/>
+
+                        </LinearLayout>
+
+                        <!-- Feu -->
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:background="@drawable/fond_stats"
+                            android:paddingVertical="5dp"
+                            android:layout_weight="1"
+                            android:layout_marginHorizontal="5dp"
+                            android:paddingHorizontal="15dp"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:id="@+id/pokemon_info_res_feu_icone"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:contentDescription="@string/pokemon_item_energy_desc"
+                                android:src="@drawable/ic_pokeball" />
+
+                            <TextView
+                                android:id="@+id/pokemon_info_res_feu_texte"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="@string/pokemon_info_pv_value"
+                                android:textSize="16sp"
+                                android:layout_gravity="center_vertical"
+                                android:layout_weight="1"
+                                android:gravity="end"
+                                android:textColor="@color/white"/>
+
+                        </LinearLayout>
+
+                    </TableRow>
+
+                    <TableRow
+                        android:paddingVertical="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <!-- Eau -->
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:background="@drawable/fond_stats"
+                            android:paddingVertical="5dp"
+                            android:layout_weight="1"
+                            android:layout_marginHorizontal="5dp"
+                            android:paddingHorizontal="15dp"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:id="@+id/pokemon_info_res_eau_icone"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:contentDescription="@string/pokemon_item_energy_desc"
+                                android:src="@drawable/ic_pokeball" />
+
+                            <TextView
+                                android:id="@+id/pokemon_info_res_eau_texte"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="@string/pokemon_info_pv_value"
+                                android:textSize="16sp"
+                                android:layout_gravity="center_vertical"
+                                android:layout_weight="1"
+                                android:gravity="end"
+                                android:textColor="@color/white"/>
+
+                        </LinearLayout>
+
+                        <!-- Plante -->
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:background="@drawable/fond_stats"
+                            android:paddingVertical="5dp"
+                            android:layout_weight="1"
+                            android:layout_marginHorizontal="5dp"
+                            android:paddingHorizontal="15dp"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:id="@+id/pokemon_info_res_plante_icone"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:contentDescription="@string/pokemon_item_energy_desc"
+                                android:src="@drawable/ic_pokeball" />
+
+                            <TextView
+                                android:id="@+id/pokemon_info_res_plante_texte"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="@string/pokemon_info_pv_value"
+                                android:textSize="16sp"
+                                android:layout_gravity="center_vertical"
+                                android:layout_weight="1"
+                                android:gravity="end"
+                                android:textColor="@color/white"/>
+
+                        </LinearLayout>
+
+                    </TableRow>
+
+                    <TableRow
+                        android:paddingVertical="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <!-- Electrik -->
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:background="@drawable/fond_stats"
+                            android:paddingVertical="5dp"
+                            android:layout_weight="1"
+                            android:layout_marginHorizontal="5dp"
+                            android:paddingHorizontal="15dp"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:id="@+id/pokemon_info_res_electrik_icone"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:contentDescription="@string/pokemon_item_energy_desc"
+                                android:src="@drawable/ic_pokeball" />
+
+                            <TextView
+                                android:id="@+id/pokemon_info_res_electrik_texte"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="@string/pokemon_info_pv_value"
+                                android:textSize="16sp"
+                                android:layout_gravity="center_vertical"
+                                android:layout_weight="1"
+                                android:gravity="end"
+                                android:textColor="@color/white"/>
+
+                        </LinearLayout>
+
+                        <!-- Psy -->
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:background="@drawable/fond_stats"
+                            android:paddingVertical="5dp"
+                            android:layout_weight="1"
+                            android:layout_marginHorizontal="5dp"
+                            android:paddingHorizontal="15dp"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:id="@+id/pokemon_info_res_psy_icone"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:contentDescription="@string/pokemon_item_energy_desc"
+                                android:src="@drawable/ic_pokeball" />
+
+                            <TextView
+                                android:id="@+id/pokemon_info_res_psy_texte"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="@string/pokemon_info_pv_value"
+                                android:textSize="16sp"
+                                android:layout_gravity="center_vertical"
+                                android:layout_weight="1"
+                                android:gravity="end"
+                                android:textColor="@color/white"/>
+
+                        </LinearLayout>
+
+                    </TableRow>
+
+                    <TableRow
+                        android:paddingVertical="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <!-- Glace -->
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:background="@drawable/fond_stats"
+                            android:paddingVertical="5dp"
+                            android:layout_weight="1"
+                            android:layout_marginHorizontal="5dp"
+                            android:paddingHorizontal="15dp"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:id="@+id/pokemon_info_res_glace_icone"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:contentDescription="@string/pokemon_item_energy_desc"
+                                android:src="@drawable/ic_pokeball" />
+
+                            <TextView
+                                android:id="@+id/pokemon_info_res_glace_texte"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="@string/pokemon_info_pv_value"
+                                android:textSize="16sp"
+                                android:layout_gravity="center_vertical"
+                                android:layout_weight="1"
+                                android:gravity="end"
+                                android:textColor="@color/white"/>
+
+                        </LinearLayout>
+
+                        <!-- Dragon -->
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:background="@drawable/fond_stats"
+                            android:paddingVertical="5dp"
+                            android:layout_weight="1"
+                            android:layout_marginHorizontal="5dp"
+                            android:paddingHorizontal="15dp"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:id="@+id/pokemon_info_res_dragon_icone"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:contentDescription="@string/pokemon_item_energy_desc"
+                                android:src="@drawable/ic_pokeball" />
+
+                            <TextView
+                                android:id="@+id/pokemon_info_res_dragon_texte"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="@string/pokemon_info_pv_value"
+                                android:textSize="16sp"
+                                android:layout_gravity="center_vertical"
+                                android:layout_weight="1"
+                                android:gravity="end"
+                                android:textColor="@color/white"/>
+
+                        </LinearLayout>
+
+                    </TableRow>
+
+                    <TableRow
+                        android:paddingVertical="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <!-- Tenebre -->
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:background="@drawable/fond_stats"
+                            android:paddingVertical="5dp"
+                            android:layout_weight="1"
+                            android:layout_marginHorizontal="5dp"
+                            android:paddingHorizontal="15dp"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:id="@+id/pokemon_info_res_tenebre_icone"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:contentDescription="@string/pokemon_item_energy_desc"
+                                android:src="@drawable/ic_pokeball" />
+
+                            <TextView
+                                android:id="@+id/pokemon_info_res_tenebre_texte"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="@string/pokemon_info_pv_value"
+                                android:textSize="16sp"
+                                android:layout_gravity="center_vertical"
+                                android:layout_weight="1"
+                                android:gravity="end"
+                                android:textColor="@color/white"/>
+
+                        </LinearLayout>
+
+                        <!-- Fee -->
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:background="@drawable/fond_stats"
+                            android:paddingVertical="5dp"
+                            android:layout_weight="1"
+                            android:layout_marginHorizontal="5dp"
+                            android:paddingHorizontal="15dp"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:id="@+id/pokemon_info_res_fee_icone"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:contentDescription="@string/pokemon_item_energy_desc"
+                                android:src="@drawable/ic_pokeball" />
+
+                            <TextView
+                                android:id="@+id/pokemon_info_res_fee_texte"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="@string/pokemon_info_pv_value"
+                                android:textSize="16sp"
+                                android:layout_gravity="center_vertical"
+                                android:layout_weight="1"
+                                android:gravity="end"
+                                android:textColor="@color/white"/>
+
+                        </LinearLayout>
+
+                    </TableRow>
+
+                </TableLayout>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </ScrollView>
 
     <!-- Bouton Fermer -->
     <ImageButton
