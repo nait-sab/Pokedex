@@ -10,5 +10,8 @@
 
     <color name="couleurPrincipale">#B9353A</color>
     <color name="fondItemPokemon">#1B2631</color>
-    <color name="texteItemPokemon">#FFFFFFFF</color>
+    <color name="textePokemon">#FFFFFFFF</color>
+    <color name="fondDegradestart">#42000000</color>
+    <color name="fondDegradeMid">#92000000</color>
+    <color name="fondDegradeEnd">#D9000000</color>
 </resources>

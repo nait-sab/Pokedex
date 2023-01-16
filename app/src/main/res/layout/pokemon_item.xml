@@ -31,7 +31,7 @@
             android:layout_height="wrap_content"
             android:text="@string/pokemon_item_nom_exemple"
             android:textSize="16sp"
-            android:textColor="@color/texteItemPokemon"
+            android:textColor="@color/textePokemon"
             android:textStyle="bold"/>
 
         <TextView
@@ -40,7 +40,7 @@
             android:layout_height="wrap_content"
             android:text="@string/pokemon_item_numero_exemple"
             android:textSize="14sp"
-            android:textColor="@color/texteItemPokemon"/>
+            android:textColor="@color/textePokemon"/>
 
     </LinearLayout>
 
