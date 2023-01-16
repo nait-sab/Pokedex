@@ -9,7 +9,7 @@ import fr.naitflo.pokedex.pokemon.data.model.PokemonRoom
 
 @Dao
 interface PokemonDao {
-    @Query("SELECT * FROM pokemon")
+    @Query("SELECT * FROM pokemon ORDER BY generation ASC")
     fun selectAll(): LiveData<List<PokemonRoom>>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
