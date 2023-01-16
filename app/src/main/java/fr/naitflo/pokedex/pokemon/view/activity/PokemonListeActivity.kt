@@ -135,12 +135,11 @@ class PokemonListeActivity : AppCompatActivity() {
             .setAutoCancel(true)
             .setContentTitle("#" + pokemonPojoUI.pokedexId.toString() + " " + pokemonPojoUI.nom)
             .setAutoCancel(true)
-            .setSmallIcon(fr.naitflo.pokedex.R.drawable.ic_pokeball)
-            .setColor(resources.getColor(fr.naitflo.pokedex.R.color.couleurPrincipale))
+            .setSmallIcon(R.drawable.ic_pokeball)
+            .setColor(resources.getColor(R.color.couleurPrincipale))
             .setColorized(true)
 
         with(NotificationManagerCompat.from(this)) {
-            // notificationId is a unique int for each notification that you must define
             notify(NOTIFICATION_ID, notificationCompat.build())
         }
     }
