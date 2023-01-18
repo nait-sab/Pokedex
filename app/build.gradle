@@ -46,6 +46,7 @@ dependencies {
     // AndroidX
     implementation "androidx.room:room-runtime:2.4.3"
     implementation 'com.google.firebase:firebase-messaging-ktx:23.1.1'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     kapt "androidx.room:room-compiler:2.4.3"
     implementation "androidx.room:room-ktx:2.4.3"
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1"

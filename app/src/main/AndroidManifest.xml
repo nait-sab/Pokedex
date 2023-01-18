@@ -3,7 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.INTERNET" />
-
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
 
     <application
@@ -18,17 +17,24 @@
         android:theme="@style/Theme.Pokedex.Main"
         tools:targetApi="31">
         <activity
-            android:name=".firebase.RegisterActivity"
-            android:windowSoftInputMode="adjustResize"
+            android:name=".pokemon.view.activity.PokemonGroupeActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
+            android:name=".firebase.RegisterActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".firebase.LoginActivity"
-            android:windowSoftInputMode="adjustResize"
-            android:exported="false">
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -53,6 +59,7 @@
             android:theme="@style/Theme.Pokedex.SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
 
@@ -60,21 +67,26 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
+
         <service
             android:name=".firebase.MessagingService"
-            android:exported="false"
-            android:directBootAware="true">
-        <intent-filter>
+            android:directBootAware="true"
+            android:exported="false">
+            <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
-        <!-- Set custom default icon. This is used when no icon is set for incoming notification messages.
-     See README(https://goo.gl/l4GJaQ) for more. -->
+        <!--
+ Set custom default icon. This is used when no icon is set for incoming notification messages.
+     See README(https://goo.gl/l4GJaQ) for more.
+        -->
         <meta-data
             android:name="com.google.firebase.messaging.default_notification_icon"
             android:resource="@drawable/ic_pokeball" />
-        <!-- Set color used with incoming notification messages. This is used when no color is set for the incoming
-             notification message. See README(https://goo.gl/6BKBk7) for more. -->
+        <!--
+ Set color used with incoming notification messages. This is used when no color is set for the incoming
+             notification message. See README(https://goo.gl/6BKBk7) for more.
+        -->
         <meta-data
             android:name="com.google.firebase.messaging.default_notification_color"
             android:resource="@color/common_google_signin_btn_text_dark" />
