@@ -103,9 +103,9 @@ class PokemonListeActivity : AppCompatActivity() {
     private fun onItemClick(pokemonPojoUI: PokemonPojoUI, view: View) {
         view.performHapticFeedback(HapticFeedbackConstants.VIRTUAL_KEY)
         val i = Intent(this, PokemonInfoActivity::class.java)
-        val pokemonPojoUI: PokemonPojoUI = pokemonPojoUI
-        i.putExtra("donneesPokemon", pokemonPojoUI)
-        sendnotif(pokemonPojoUI)
+        val pojoUI: PokemonPojoUI = pokemonPojoUI
+        i.putExtra("donneesPokemon", pojoUI)
+        sendnotif(pojoUI)
         startActivity(i)
     }
 
@@ -135,12 +135,11 @@ class PokemonListeActivity : AppCompatActivity() {
             .setAutoCancel(true)
             .setContentTitle("#" + pokemonPojoUI.pokedexId.toString() + " " + pokemonPojoUI.nom)
             .setAutoCancel(true)
-            .setSmallIcon(fr.naitflo.pokedex.R.drawable.ic_pokeball)
-            .setColor(resources.getColor(fr.naitflo.pokedex.R.color.couleurPrincipale))
+            .setSmallIcon(R.drawable.ic_pokeball)
+            .setColor(resources.getColor(R.color.couleurPrincipale))
             .setColorized(true)
 
         with(NotificationManagerCompat.from(this)) {
-            // notificationId is a unique int for each notification that you must define
             notify(NOTIFICATION_ID, notificationCompat.build())
         }
     }

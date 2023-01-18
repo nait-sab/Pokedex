@@ -61,7 +61,7 @@
                 android:value="" />
         </activity>
         <service
-            android:name=".firebase.MyFirebaseMessagingService"
+            android:name=".firebase.MessagingService"
             android:exported="false"
             android:directBootAware="true">
         <intent-filter>
