@@ -103,9 +103,9 @@ class PokemonListeActivity : AppCompatActivity() {
     private fun onItemClick(pokemonPojoUI: PokemonPojoUI, view: View) {
         view.performHapticFeedback(HapticFeedbackConstants.VIRTUAL_KEY)
         val i = Intent(this, PokemonInfoActivity::class.java)
-        val pokemonPojoUI: PokemonPojoUI = pokemonPojoUI
-        i.putExtra("donneesPokemon", pokemonPojoUI)
-        sendnotif(pokemonPojoUI)
+        val pojoUI: PokemonPojoUI = pokemonPojoUI
+        i.putExtra("donneesPokemon", pojoUI)
+        sendnotif(pojoUI)
         startActivity(i)
     }
 
