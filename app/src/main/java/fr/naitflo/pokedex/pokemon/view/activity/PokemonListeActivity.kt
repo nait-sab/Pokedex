@@ -71,6 +71,10 @@ class PokemonListeActivity : AppCompatActivity() {
             RecyclerView.VERTICAL, false
         )
 
+        binding.pokemonListeTitre.setOnClickListener {
+            voirGroupe()
+        }
+
         binding.pokemonListeContenu.adapter = adapter
 
         val utilisateurID = getString(R.string.pokemon_liste_id) + " " + firebaseAuth.uid
@@ -107,6 +111,10 @@ class PokemonListeActivity : AppCompatActivity() {
         i.putExtra("donneesPokemon", pojoUI)
         sendnotif(pojoUI)
         startActivity(i)
+    }
+
+    private fun voirGroupe() {
+        startActivity(Intent(this, PokemonGroupeActivity::class.java))
     }
 
     companion object {

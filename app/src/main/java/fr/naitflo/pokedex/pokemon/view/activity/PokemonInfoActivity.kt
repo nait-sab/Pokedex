@@ -31,8 +31,6 @@ class PokemonInfoActivity : AppCompatActivity() {
 
         setContentView(binding.root)
         initBinding()
-
-
     }
 
     private fun initBinding() {
