@@ -11,7 +11,7 @@ class Home : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         // 1 - Charger tout ce qui est nécéssaire à l'app
-        //Thread.sleep(3000) // à retirer au rendu final sauf si on a rien à la place
+        Thread.sleep(2000) // à retirer au rendu final sauf si on a rien à la place
 
         // 2 - Fin du splash screen, démarrage de l'app
         val splashscreen = installSplashScreen()
