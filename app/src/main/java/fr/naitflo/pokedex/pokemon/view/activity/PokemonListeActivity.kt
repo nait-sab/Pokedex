@@ -4,10 +4,12 @@ import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.content.Context
 import android.content.Intent
+import android.graphics.Bitmap
+import android.graphics.drawable.Drawable
 import android.os.Bundle
+import android.util.Log
 import android.view.HapticFeedbackConstants
 import android.view.View
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
@@ -15,15 +17,17 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import com.bumptech.glide.request.target.CustomTarget
 import com.google.firebase.auth.FirebaseAuth
 import fr.naitflo.pokedex.R
-import fr.naitflo.pokedex.databinding.ActivityPokemonInfoBinding
 import fr.naitflo.pokedex.databinding.ActivityPokemonListeBinding
 import fr.naitflo.pokedex.firebase.LoginActivity
 import fr.naitflo.pokedex.pokemon.view.adapter.PokemonAdapter
 import fr.naitflo.pokedex.pokemon.view.model.MyPokemonForRecyclerView
 import fr.naitflo.pokedex.pokemon.view.model.PokemonPojoUI
 import fr.naitflo.pokedex.pokemon.view.viewModel.PokemonViewModel
+
 
 /**
  * Class : Pokemon Liste
@@ -140,6 +144,27 @@ class PokemonListeActivity : AppCompatActivity() {
 
     private fun createNotificationCompatBuilder(pokemonPojoUI: PokemonPojoUI) {
         val notificationCompat = NotificationCompat.Builder(this, CHANNEL_ID)
+        Glide.with(applicationContext)
+            .asBitmap()
+            .load(pokemonPojoUI.image.toString())
+            .into(object: CustomTarget<Bitmap>() {
+                override fun onResourceReady(
+                    resource: Bitmap,
+                    transition: com.bumptech.glide.request.transition.Transition<in Bitmap>?
+                ) {
+                    Log.d("test", "${resource.height}")
+                    //largeIcon
+                    notificationCompat.setLargeIcon(resource)
+                    //Big Picture
+                    notificationCompat.setStyle(
+                        NotificationCompat.BigPictureStyle().bigPicture(resource)
+                    )
+                }
+                override fun onLoadCleared(placeholder: Drawable?) {
+                }
+            })
+
+        notificationCompat
             .setAutoCancel(true)
             .setContentTitle("#" + pokemonPojoUI.pokedexId.toString() + " " + pokemonPojoUI.nom)
             .setAutoCancel(true)
